@@ -1,18 +1,8 @@
 from datetime import datetime
+
+from sqlalchemy import Date, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy import (
-    create_engine,
-    Integer,
-    String,
-    Date,
-    ForeignKey,
-    select,
-    Text,
-    and_,
-    desc,
-    func,
-)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 Base = declarative_base()

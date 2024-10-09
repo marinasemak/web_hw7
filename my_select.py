@@ -1,19 +1,9 @@
 from pprint import pprint
 
-from sqlalchemy import func, desc, and_, distinct
+from sqlalchemy import and_, desc, distinct, func
 
 from conf.db import session
-from conf.models import Student, Subject, Group, Lecturer, Grade
-from sqlalchemy.orm import joinedload
-
-
-def get_student_join():
-    students = session.query(Student).options(joinedload(Student.group)).all()
-    for s in students:
-        # print(s.group.name)
-        columns = ["id", "fullname", "group"]
-        r = [dict(zip(columns, (s.id, s.fullname, s.group.name)))]
-        print(r)
+from conf.models import Grade, Group, Lecturer, Student, Subject
 
 
 def select_1():

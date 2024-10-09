@@ -12,6 +12,8 @@ psycopg2 = "^2.9.9"
 faker = "^30.1.0"
 black = "^24.8.0"
 alembic = "^1.13.3"
+autoflake = "^2.3.1"
+isort = "^5.13.2"
 
 
 [build-system]

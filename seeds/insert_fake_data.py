@@ -1,14 +1,14 @@
 import logging
-from random import randint
 import random
 from datetime import date
+from random import randint
 
 from faker import Faker
-from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import select
+from sqlalchemy.exc import SQLAlchemyError
 
 from conf.db import session
-from conf.models import Student, Subject, Group, Lecturer, Grade
+from conf.models import Grade, Group, Lecturer, Student, Subject
 
 fake = Faker()
 
@@ -66,10 +66,10 @@ def insert_grades():
 
 if __name__ == "__main__":
     try:
-        # insert_groups()
-        # insert_students()
-        # insert_lecturers()
-        # insert_subjects()
+        insert_groups()
+        insert_students()
+        insert_lecturers()
+        insert_subjects()
         insert_grades()
         session.commit()
     except SQLAlchemyError as e:
